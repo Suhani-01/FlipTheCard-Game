@@ -200,5 +200,47 @@ body{
         width: 60px;
         height: 80px;
     }
+    @keyframes overlay-grow{
+        from{
+            background-color:rgba(0,0,0,0);
+            font-size:0;
+        }
+        to{
+            background-color:rgba(0,0,0,.8);
+            font-size: 50px;
+        }
+    }
+    .sub-text{
+        height: 50px;
+        width: 200px;
+        background:radial-gradient(rgb(42, 152, 64),rgb(2, 67, 19));
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.4rem;
+    }
+   
+}
+@media (max-width:500px){
+    .txt{
+        font-size: 50px;
+        background-color: rgba(41, 140, 232, 0.544);
+        padding: 8px;
+        border-radius: 10px;
+
+    }
+    
+    .title{
+        font-size: 40px;
+
+    }
+    .container{
+        width: 85%;
+    }
+    .card{
+        width: 65px;
+        height: 80px;
+    }
+   
    
 }
