@@ -58,6 +58,7 @@ function startTimer() {
         }
         else if(timeLeft<=15){
             timerDisplay.style.color="red";
+            timerDisplay.classList.add("timer-warning");
         }
     }, 1000);
 }

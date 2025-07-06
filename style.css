@@ -276,3 +276,33 @@ body{
    
    
 }
+
+@media (max-width:430px){
+    .title{
+        font-size: 35px;
+    }
+    .info1{
+        font-size: 18px;
+    }
+    #flips-count,#time-rem{
+        height:30px;
+    }
+    .container{
+        height:450px;
+    }
+    .card{
+        height:70px;
+        width: 55px;
+    }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-3px); }
+}
+
+.timer-warning {
+  animation: shake 0.5s ease-in-out;
+}
