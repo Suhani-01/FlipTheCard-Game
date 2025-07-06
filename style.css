@@ -16,6 +16,168 @@ body{
     font-family: 'Times New Roman', Times, serif;
 }
 
+/********************* start ********************/
+.overlay-text{
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    display: flex;
+    transition:transform 0.6s;
+}
+
+.start-container{
+    height:377px;
+    width: 639px;
+    background-color:#a0b765af;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 36px;
+    border: 5px solid #324e4d;
+
+}
+
+
+.start-desc{
+    height: 219.8px;
+    width: 565.6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color:#e0b78c ;
+    border: 3px solid black;
+    padding: 10px;
+    padding-inline: 20px;
+    font-size: 18px;
+    border-radius: 18px;
+    color: black;
+}
+.start-desc p{
+    margin: 3px;
+    width: 100%;
+    text-align: center;
+}
+.start-initial{
+    cursor: pointer;
+    margin-top: 23px;
+    padding-top: 8px;
+    font-size: 25px;
+    color: white;
+    font-weight: 700;
+    height: 50px;
+    width:220.4px;
+    text-align: center;
+    margin-inline: auto;
+    background-color: #324e4d;
+    border:3px solid #a0b765;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.start-initial:hover{
+    transform: scale(1.1);
+}
+
+.overlay-text.visible{
+    display: flex;
+    flex-direction: column;
+    animation: overlay-grow 500ms forwards;
+}
+@keyframes overlay-grow{
+    from{
+        background-color:rgba(0,0,0,0);
+        font-size:0;
+    }
+    to{
+        background-color:rgba(0,0,0,.8);
+        font-size: 6em;
+    }
+}
+
+/********************** Game Over **********************/
+#game-over{
+    visibility: hidden;
+}
+
+.game-over-container{
+    font-family: sans-serif;
+    height: 277px;
+    width: 522px;
+    background-color:#e75555b4 ;
+    border:6px solid #704f4f;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.game-over-desc{
+    font-size: 27px;
+    font-weight: 700;
+    color: white;
+}
+.Restart{
+    font-size: 22px;
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background:white;
+    color: red;
+    font-weight: 600;
+    border:3px solid #704f4f;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.Restart:hover{
+    transform: scale(1.2);
+}
+
+/******************* Victory **********************/
+.victory-container{
+    height: 277px;
+    width: 522px;
+    background-color:#324e4dd7 ;
+    border-radius: 36px;
+    border:4px solid #a0b765 ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    align-items: center;
+}
+.victory-desc{
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+}
+.Restart2{
+    font-size: 22px;
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background:white;
+    color: #324e4d;
+    font-weight: 600;
+    border:4px solid #a0b765;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+.Restart2:hover{
+    transform: scale(1.2);
+}
+
 .container{
     margin-bottom: 20px;
     box-sizing: border-box;
@@ -103,78 +265,11 @@ body{
   background-color: #b2ca77;
 }
 
-.overlay-text{
-    display: none;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-    display: flex;
-    color:white;
-    text-shadow:2px 2px 5px rgba(181, 177, 177, 0.8);
-    cursor: pointer;
-    transition:transform 0.6s;
-}
-.txt{
-    color: white;
-    transition:transform 0.6s;
-}
-.txt:hover{
-    color: green;
-    text-decoration: underline;
-}
 
-
-
-
-.overlay-text.visible{
-    display: flex;
-    flex-direction: column;
-    animation: overlay-grow 500ms forwards;
-}
-
-
-.sub-text{
-    font-size: .3em;
-    padding: 8px;
-    border-radius: 10px;
-    margin-top: 10px;
-    background:radial-gradient(rgb(113, 201, 248),rgb(48, 48, 112));
-    border:2px solid rgb(40, 32, 70);
-    transition: transform 0.3s ease;
-}
-
-.sub-text:hover{
-    transform: scale(1.2);
-    background:radial-gradient(rgb(129, 211, 255),rgb(65, 65, 138));
-}
-@keyframes overlay-grow{
-    from{
-        background-color:rgba(0,0,0,0);
-        font-size:0;
-    }
-    to{
-        background-color:rgba(0,0,0,.8);
-        font-size: 6em;
-    }
-}
 #victory{
     visibility: hidden;
     
 }
-#game-over{
-    visibility: hidden;
-}
-
-
-
-
-
-
 
 
 .card.flipped{
@@ -216,6 +311,7 @@ body{
     backface-visibility: visible;
 }
 
+
 @media (max-width:650px){
     .txt{
         font-size: 60px;
@@ -223,6 +319,27 @@ body{
     .title{
         font-size: 40px;
     }
+    .start-container{
+        width: 80%;
+        height: 400px;
+    }
+    .start-desc{
+        width: 85%;
+        font-size: 16px;
+    }
+    .start-initial{
+        font-size:20px ;
+        padding-top: 11px;
+    }
+
+    .victory-container{
+        width: 80%;
+        height: 200px;
+    }
+    .Restart2{
+        font-size:20px ;
+    }
+
     .container{
         width: 70%;
         height: 500px;
@@ -241,7 +358,7 @@ body{
             font-size: 50px;
         }
     }
-    .sub-text{
+    .Restart{
         height: 50px;
         width: 200px;
         background:radial-gradient(rgb(42, 152, 64),rgb(2, 67, 19));
@@ -252,6 +369,7 @@ body{
     }
    
 }
+
 @media (max-width:500px){
     .txt{
         font-size: 50px;
@@ -282,6 +400,12 @@ body{
         font-size: 35px;
     }
     .info1{
+        font-size: 18px;
+    }
+    .start-desc{
+        height: 70%;
+    }
+    .Restart2{
         font-size: 18px;
     }
     #flips-count,#time-rem{
