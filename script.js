@@ -17,7 +17,7 @@ function resetGame() {
     lockBoard = false;
     clearInterval(timerInterval);
     timeLeft=100;
-    timerDisplay.style.color="white";
+    timerDisplay.style.color="black";
     cards.forEach(card => {
         card.classList.remove("flipped", "matched");
         card.addEventListener("click", flipCard)
