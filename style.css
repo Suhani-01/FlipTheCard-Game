@@ -310,22 +310,18 @@ body{
 .matched {
   position: relative;
   border-radius: inherit;
-  box-sizing: border-box;
- 
-
 }
 
 .matched::after {
   content: "";
   position: absolute;
-  top: 0; 
-  left: 0;
+  
   width: 100%; 
-  height: 100%;
+  height:100%;
 
   background: radial-gradient(circle,rgba(226, 244, 226, 0)  45%, rgba(40, 243, 36, 0.747) 90%);
-    
-  border: 2px solid black; /* card ka shape maintain karega */
+  
+   /* card ka shape maintain karega */
   pointer-events: none; /* click block na ho */
 }
 
