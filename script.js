@@ -9,6 +9,11 @@ const start = document.querySelector("#start");
 let done = 0;
 let timerInterval;
 
+let match_sound=new Audio("sounds/matched.m4a")
+let not_match_sound=new Audio("sounds/notmatchsound.m4a")
+let game_over_sound=new Audio("sounds/gameover.mp3")
+let winning_audio=new Audio("sounds/winning.mp3")
+
 function resetGame() {
     done = 0;
     flips = 0;
@@ -65,7 +70,7 @@ function startTimer() {
 
 function lose() {
     const over = document.querySelector("#game-over");
-
+    game_over_sound.play();
     cards.forEach(card => card.removeEventListener("click", flipCard)); // Disable clicks
     over.style.visibility = "visible";
     const start1 = document.querySelector("#startme");
@@ -98,6 +103,8 @@ function flipCard(){
 function gameend() {
     clearInterval(timerInterval);
     const winner = document.querySelector("#victory");
+    match_sound.pause();
+    winning_audio.play();
     winner.style.visibility = "visible";
     const start1 = document.querySelector("#startme2");
 
@@ -117,20 +124,28 @@ function checkMatch() {
 
     if (firstImg === secondImg) {
         // Cards match
-        firstCard.classList.add("matched");
-        secondCard.classList.add("matched");
-        done += 2;
-        firstCard = null;
-        secondCard = null;
-        lockBoard = false;
-        if (done == cards.length) {
-            gameend();
-        }
+        
+        setTimeout(()=>{
+            firstCard.classList.add("matched");
+            secondCard.classList.add("matched");
+            match_sound.play();
+            done += 2;
+        
+            firstCard = null;
+            secondCard = null;
+            lockBoard = false;
+            if (done == cards.length) {
+                gameend();
+            }
+        },300)
+        
     } else {
         // Cards don't match, flip them back after a short delay
+        
         setTimeout(() => {
             firstCard.classList.remove("flipped");
             secondCard.classList.remove("flipped");
+            not_match_sound.play();
             firstCard = null;
             secondCard = null;
             lockBoard = false;
