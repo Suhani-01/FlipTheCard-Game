@@ -1,6 +1,10 @@
 
 *{
     box-sizing: border-box;
+    /* to prevent selecting anything on the website */
+    -webkit-user-select:none;  /* for chrome/safari */
+    -moz-user-select:none;  /* for Firefox */
+    user-select:none;
 }
 
 html{
@@ -401,6 +405,7 @@ body{
     
     .title{
         font-size: 40px;
+        margin-top: 70px;
 
     }
     .container{
